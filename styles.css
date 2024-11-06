@@ -1,0 +1,147 @@
+/* Estilos Gerais */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2E8B57;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    display: inline-block;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Seção Hero */
+.hero {
+    background-image: url('campo.jpg'); /* Substitua por uma imagem de fundo relacionada */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background-color: #FFD700;
+    color: #333;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #FFC107;
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+}
+
+section h3 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p, section ul {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background: url('icon.png') no-repeat left center; /* Substitua por um ícone adequado */
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 40px 0;
+}
+
+footer a {
+    color: #2E8B57;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav {
+        float: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    nav li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+}
