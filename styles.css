@@ -1,10 +1,27 @@
-/* Estilos Gerais */
-body {
+/* Reset básico */
+* {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Variáveis de CSS */
+:root {
+    --primary-color: #173a35;
+    --secondary-color: #f5faf7;
+    --font-family: 'Roboto', sans-serif;
+    --text-color: #333;
+    --background-color: #ffffff;
+}
+
+/* Estilos gerais */
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -13,135 +30,375 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #2E8B57;
-    color: #fff;
-    padding: 20px 0;
+    background: var(--background-color);
+    padding: 1.25rem 0; /* 20px */
+    text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    display: inline-block;
-}
-
-nav {
-    float: right;
+header nav {
+    display: flex;
+    justify-content: center;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    gap: 1.25rem; /* 20px */
+    flex-direction: row; /* Garante alinhamento horizontal */
 }
 
-nav li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-nav a {
-    color: #fff;
+nav ul li a {
     text-decoration: none;
+    color: var(--primary-color);
     font-weight: bold;
+    font-size: 1.125rem; /* 18px */
+    padding: 0.5rem 1rem; /* Adiciona padding para melhorar a área clicável */
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
     text-decoration: underline;
+    color: #145a4f; /* Cor ao passar o mouse ou focar */
+    outline: none;
 }
 
 /* Seção Hero */
 .hero {
-    background-image: url('campo.jpg'); /* Substitua por uma imagem de fundo relacionada */
-    background-size: cover;
-    background-position: center;
-    color: #fff;
-    text-align: center;
-    padding: 100px 0;
+    background-color: var(--background-color);
+    padding: 3.75rem 0; /* 60px */
 }
 
-.hero h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center;
+    gap: 1.5rem; /* Espaçamento entre os elementos */
+    max-width: 800px; /* Limita a largura para centralização */
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin: 0 auto; /* Centraliza o contêiner na página */
 }
 
-.hero p {
-    font-size: 24px;
-    margin-bottom: 40px;
+.hero-container h1 {
+    font-size: 3rem; /* Aumenta o tamanho do texto */
+    margin-bottom: 0.5rem; /* Espaçamento abaixo do título */
+    color: var(--primary-color);
+}
+
+.hero-logo img {
+    width: 150px; /* Tamanho da logo */
+    height: auto;
+}
+
+.hero-container p {
+    font-size: 1.25rem; /* Aumenta o tamanho do slogan */
+    margin-bottom: 1rem; /* Espaçamento abaixo do slogan */
+    color: #555;
+    line-height: 1.6; /* Espaçamento entre linhas */
+    text-align: center; /* Centraliza o texto */
 }
 
 .btn {
-    background-color: #FFD700;
-    color: #333;
-    padding: 15px 30px;
-    text-decoration: none;
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1rem; /* 16px */
     font-weight: bold;
-    border-radius: 5px;
+    text-decoration: none;
+    padding: 0.75rem 1.75rem; /* 12px 28px */
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 0 4px 6px */
+    margin-top: 0.5rem; /* 8px */
 }
 
-.btn:hover {
-    background-color: #FFC107;
+.btn:hover,
+.btn:focus {
+    background-color: #145a4f;
+    transform: translateY(-0.1875rem); /* -3px */
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15); /* 0 6px 12px */
+    outline: none;
+}
+
+.btn:focus {
+    outline: 0.125rem solid var(--primary-color); /* 2px */
 }
 
 /* Seções */
 section {
-    padding: 60px 0;
+    padding: 3.75rem 0; /* 60px */
 }
 
-section h3 {
-    font-size: 36px;
-    margin-bottom: 20px;
+section h2 {
+    font-size: 2.25rem; /* 36px */
+    margin-bottom: 1.875rem; /* 30px */
+    color: var(--primary-color);
+    text-align: center;
 }
 
-section p, section ul {
-    font-size: 18px;
-    line-height: 1.6;
+/* Estilo para a descrição na seção Sobre Nós */
+#sobre .container p {
+    max-width: 800px; /* Define a largura máxima do parágrafo */
+    margin: 0 auto; /* Centraliza o parágrafo dentro do contêiner */
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.6; /* Melhora o espaçamento entre linhas */
+    color: #555; /* Cor do texto */
+    text-align: justify; /* Justifica o texto */
 }
 
-section ul {
+/* Como Funciona */
+#como-funciona {
+    background: var(--secondary-color);
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.25rem; /* 20px */
+}
+
+.box {
+    flex: 1 1 calc(30% - 1.25rem); /* Subtrai o gap */
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box img {
+    width: 3.125rem; /* 50px */
+    margin-bottom: 0.9375rem; /* 15px */
+}
+
+.box h3 {
+    font-size: 1.25rem; /* 20px */
+    margin-bottom: 0.625rem; /* 10px */
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.box p {
+    font-size: 1rem; /* 16px */
+    color: #555;
+}
+
+.box:hover,
+.box:focus {
+    transform: translateY(-0.3125rem); /* -5px */
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.box:focus {
+    outline: 0.125rem solid var(--primary-color);
+}
+
+/* Por Que Escolher */
+#por-que-escolher .reasons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.reason {
+    flex: 1 1 calc(30% - 1.25rem);
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reason img {
+    width: 3.125rem;
+    margin-bottom: 0.9375rem;
+}
+
+.reason p {
+    font-size: 1.125rem; /* 18px */
+    color: #555;
+}
+
+.reason:hover,
+.reason:focus {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.reason:focus {
+    outline: 0.125rem solid var(--primary-color);
+}
+
+/* Para Quem */
+#para-quem {
+    background: var(--secondary-color);
+}
+
+.audience {
     list-style: none;
+    font-size: 1.125rem;
+    text-align: center;
     padding: 0;
 }
 
-section ul li {
-    background: url('icon.png') no-repeat left center; /* Substitua por um ícone adequado */
-    padding-left: 40px;
-    margin-bottom: 15px;
+.audience li {
+    margin-bottom: 0.9375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.audience li img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Contato */
+#contato {
+    text-align: center;
+}
+
+#contato h2 {
+    font-size: 1.875rem; /* 30px */
+    margin-bottom: 1.25rem; /* 20px */
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    background-color: #25D366;
+    color: #ffffff;
+    font-size: 1rem; /* 16px */
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.625rem 1.5625rem; /* 10px 25px */
+    border-radius: 25px;
+    gap: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-whatsapp i {
+    font-size: 1.25rem; /* 20px */
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+    background-color: #1DA851;
+    transform: translateY(-0.1875rem);
+    outline: none;
+}
+
+.btn-whatsapp:focus {
+    outline: 0.125rem solid #1DA851;
 }
 
 /* Rodapé */
 footer {
-    background-color: #f4f4f4;
-    color: #333;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 1.25rem 0;
     text-align: center;
-    padding: 40px 0;
 }
 
-footer a {
-    color: #2E8B57;
+footer p {
+    margin: 0.625rem 0;
+}
+
+footer .social a {
+    color: #ffffff;
+    margin: 0 0.625rem;
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer .social a i {
+    font-size: 1.25rem;
+}
+
+footer .social a:hover,
+footer .social a:focus {
+    color: #cccccc;
+    outline: none;
+}
+
+/* Estilo para foco nos links */
+a:focus {
+    outline: 0.125rem solid var(--primary-color);
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    nav {
-        float: none;
+    .boxes,
+    .reasons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box,
+    .reason {
+        flex: 1 1 100%;
+        margin-bottom: 1.25rem;
+    }
+
+    .hero-container {
+        flex-direction: column;
         text-align: center;
-        margin-top: 20px;
     }
 
-    nav li {
-        display: block;
-        margin: 10px 0;
+    nav ul {
+        flex-direction: row; /* Mantém alinhamento horizontal */
+        gap: 0.625rem; /* Espaçamento ajustado para telas menores */
+        flex-wrap: wrap; /* Permite quebra de linha se necessário */
+        justify-content: center; /* Centraliza os itens */
     }
 
-    .hero h2 {
-        font-size: 32px;
+    .hero-logo img {
+        width: 180px; /* Ajuste para telas menores */
     }
 
-    .hero p {
-        font-size: 20px;
+    .hero-container p {
+        max-width: 100%; /* Permite que o texto ocupe toda a largura */
+    }
+
+    /* Ajuste na seção Sobre Nós para telas menores */
+    #sobre .container p {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-container h1 {
+        font-size: 2.5rem; /* Ajuste para telas muito pequenas */
+    }
+
+    .hero-container p {
+        font-size: 1rem; /* 16px */
+    }
+
+    .btn,
+    .btn-whatsapp {
+        font-size: 0.875rem; /* 14px */
+        padding: 0.5rem 1.25rem; /* 8px 20px */
+    }
+
+    .box img,
+    .reason img {
+        width: 2.5rem; /* 40px */
+    }
+
+    .hero-logo img {
+        width: 150px; /* Ajuste adicional para telas muito pequenas */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Reduz o tamanho da fonte para mobile */
+        padding: 0.25rem 0.5rem; /* Ajusta o padding para melhor usabilidade */
     }
 }
